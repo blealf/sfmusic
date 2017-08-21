@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap.min
+ *= rquire bootstrap.min
  *= require rails_bootstrap_forms
  *= require piano_notes
  *= require notations
@@ -19,6 +19,7 @@
  */
 /*
 @import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Oleo+Script|Rakkas|Ravi+Prakash');
+
 
 
 font-family: 'Ravi Prakash', cursive;
@@ -32,6 +33,10 @@ font-family: 'Rakkas', cursive;
 	min-width: 550px;
 }
 */
+
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+
+
 #main_front {
 	margin-top: -20px;
 }
