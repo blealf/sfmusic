@@ -1,0 +1,114 @@
+// Place all the styles related to the PianoNotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Piano
+
+/*.piano-cover {
+	border: 2px solid black;
+	min-width: 550px;
+	background-color: red;
+	height: 130px;
+}*/
+
+.piano {
+	//margin-left: -10px;
+	height: 120px;
+	background-color: grey;
+	width: 100%;
+	display: block;
+
+}
+
+.piano li {
+	display: inline;
+	float: left;
+}
+
+.white-key {
+	//display: none;
+	background-color: white;
+	height: 120px;
+	width: 22px;
+	border: 1px solid black;
+	margin-left: -8px;
+	z-index: -1;
+	padding: 2px;
+}
+
+.black-key, .transparent-key {
+	
+	height: 80px;
+	background-color: black;
+	border: 1px solid black;
+	width: 16px;
+	z-index: 15;
+	margin-left: -10px;
+}
+
+
+/*.white-key {
+	background-color: white;
+	height: 120px;
+	width: 30px;
+	border: 1px solid black;
+	margin-left: -10px;
+	z-index: -1;
+}
+
+.black-key, .transparent-key {
+	height: 80px;
+	background-color: black;
+	border: 1px solid black;
+	width: 25px;
+	z-index: 10;
+	margin-left: -15px;
+
+}*/
+
+.transparent-key {
+	background-color: white;
+	opacity: 0;
+	border: none;
+}
+
+.black-key, .transparent-key {
+	position: relative;
+	font-size: 0.8em;
+	padding: 0px;
+}
+
+.letter-white {
+	position: absolute;
+	margin-top: 90px;
+	font-weight: bolder;
+}
+
+.letter-black {
+	position: absolute;
+	margin-top: 50px;
+	font-weight: bolder;
+	color: white;
+	z-index: 20;
+}
+
+
+/*
+.white-key {
+	background-color: white;
+	height: 120px;
+	width: 30px;
+	border: 1px solid black;
+	margin-left: -10px;
+	z-index: -1;
+}
+
+.black-key, .transparent-key {
+	height: 80px;
+	background-color: black;
+	border: 1px solid black;
+	width: 25px;
+	z-index: 10;
+	margin-left: -15px;
+
+}*/

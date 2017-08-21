@@ -1,0 +1,72 @@
+<div class="container-fluid cover">
+  <h3>Piano Notes</h3>
+
+  <hr>
+
+
+  <ul class="piano">
+    <% previous = "" %>
+    <%= @piano_notes.find_each do |piano| %>
+
+      <% if piano.key == "white" %>
+        <% if previous == "white" %>
+          <li>
+            <div class="transparent-key"></div>
+          </li>
+          <li>
+            <div class="white-key"> 
+              <span class="letter-white"><%= piano.note %></span> 
+            </div>
+          </li>
+        <% else %>
+          <li>
+            <div class="white-key"> 
+              <span class="letter-white"><%= piano.note %></span> 
+            </div>
+          </li>
+        <% end %>
+        <% previous = piano.key %>
+      <% else %>
+            <li>
+              <div class="black-key"> 
+                <span class="letter-black"><%= piano.note %></span> 
+              </div>
+            </li>
+            <% previous = piano.key %>
+      <% end %>
+
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Note</th>
+        <th>Number</th>
+        <th>Key</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @piano_notes.each do |piano_note| %>
+        <tr>
+          <td><%= piano_note.note %></td>
+          <td><%= piano_note.number %></td>
+          <td><%= piano_note.key %></td>
+          <td><%= link_to 'Show', piano_note, class: 'btn btn-default' %></td>
+          <td><%= link_to 'Edit', edit_piano_note_path(piano_note), class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', piano_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>

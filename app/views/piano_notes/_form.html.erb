@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <%= bootstrap_form_for(piano_note) do |f| %>
+        <% if piano_note.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(piano_note.errors.count, "error") %> prohibited this piano_note from being saved:</h2>
+
+            <ul>
+            <% piano_note.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.text_field :note %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :alt_note %>
+        </div>
+
+        <div class="field">
+          <%= f.number_field :number %>
+        </div>
+
+        <div class="field">
+          <%= f.select :key, PianoNote.note, { :label => "Type"}%>
+        </div>
+
+
+        <div class="actions col-sm-offset-4 col-md-8">
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

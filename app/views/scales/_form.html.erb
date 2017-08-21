@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <%= bootstrap_form_for(scale) do |f| %>
+        <% if scale.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(scale.errors.count, "error") %> prohibited this scale from being saved:</h2>
+
+            <ul>
+            <% scale.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.text_field :name %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :value %>
+        </div>
+
+        <div class="actions col-sm-offset-4 col-md-8">
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

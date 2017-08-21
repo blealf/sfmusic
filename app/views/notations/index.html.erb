@@ -1,0 +1,70 @@
+<div class="container-fluid">
+	<h1>Notations</h1>
+
+
+	<%= form_tag(notations_path, method: :get) do %>
+		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
+		<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn" %>
+		<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+		<%#= text_field_tag :start_note, params[:start_note] %>
+		<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary' %>
+		
+	<% end %>
+
+
+
+
+	<h2> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %></h2>
+	<br>
+
+	<%# @main_scale.each do |ms| %>
+		<%#= ms %>
+	<%# end %>
+	<hr>
+	<div class="row">
+		<% @main_scale.each do |ms| %>
+			<div class="col-xs-4 col-sm-3 col-md-2 col-lg-1.5 notation">
+				<% SaxNote.where("note = ? ", "#{ms}").find_each do |f| %>
+					<% if  !(f.note == nil) %>
+						<div class="text_h2 note-cover">
+							<button class="btn btn-inverse note"> <%= label_tag f.note %> </button> 
+						</div>
+						<%= image_tag f.note_image.url %>
+				<% end %>
+					<%#= label_tag f.note, nil,  class: "scale_name" %>
+			<% end %>
+			</div>
+		<% end %>
+	</div>
+
+
+	<%# mn = "efd" %>
+	<%# n = mn.split("") %>
+	<%# if n.count > 1 %>
+		<%#= mn %>
+	<%# end %>
+
+
+	<%# SaxNote.all.each do |sax| %>
+		<%# if sax.note.eql?sax %>
+			<%#= image_tag sax.note_image.url %> 
+		<%# end %>
+	<%# end %>
+
+	<%# ms = [2,2,1,2,2,2,1] %>
+		<%#  bs  = ms + ms + ms %>
+	<%#= bs %>
+
+	<%# Scale.where("name LIKE ? ", "%major%").find_each do |d| %>
+		<%#= d.value %>
+	<%# end %>
+
+	<%#= main = Scale.where("name LIKE ? ", "%major%").take!.value.split(",").map{|v| v.to_i} %>
+	<%# nm = main.value.split(",").map{|v| v.to_i} %>
+	<%# main.each do |ms| %>
+		<%#= ms %>
+	<%# end %>
+</div>
+
+
+

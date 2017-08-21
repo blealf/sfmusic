@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @sax_note.note %>
+  <%= @sax_note.number %>
+  <%= image_tag @sax_note.note_image.url %>
+	<%#= image_tag @sax_note.note_image.url(:medium) %>
+	<%#= image_tag @sax_note.note_image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_sax_note_path(@sax_note) %> |
+<%= link_to 'Back', sax_notes_path %>

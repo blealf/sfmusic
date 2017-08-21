@@ -1,0 +1,15 @@
+<%= bootstrap_form_tag(notations_path, method: :get) do %>
+	<% @all_notes.each do |nt| %>
+		<%= submit_tag nt, name: nil, id: "scale_button" %>
+	<% end %>
+	<%#= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), {:include_blank => "select scale", :class => "drop_down"} %>
+	<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), {:include_blank => "select scale", :class => "drop_down"} %>
+	<%#= select_tag :scale_value, options_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+	<%#= text_field_tag :start_note, params[:start_note] %>
+	<%#= submit_tag 'Scale', name: nil, id: "scale_button" %>
+	
+<% end %>
+
+<% @main_scale.each do |ms| %>
+	<%= ms %>
+<% end %>

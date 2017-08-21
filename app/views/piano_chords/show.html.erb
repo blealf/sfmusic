@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @piano_chord.name %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @piano_chord.interval %>
+</p>
+
+<%= link_to 'Edit', edit_piano_chord_path(@piano_chord) %> |
+<%= link_to 'Back', piano_chords_path %>

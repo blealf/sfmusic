@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: notation_development
+  username: postgres
+  password: blealf92
+
+test:
+  <<: *default
+  database: notation_test
+  username: postgres
+  password: blealf92
+
+production:
+  <<: *default
+  database: notation_production
+  username: postgres
+  password: blealf92

@@ -1,0 +1,10 @@
+
+<div class="container-fluid">
+  <%= link_to 'New Sax Note', new_sax_note_path, class: 'btn btn-primary' %>
+  <hr>
+  <%= render 'sax_notes' %>
+</div>
+
+<%# SaxNote.find_by_sql("SELECT note FROM sax_notes ORDER BY number").each do |sax| %>
+  <%#= sax.note %>
+<%# end %>

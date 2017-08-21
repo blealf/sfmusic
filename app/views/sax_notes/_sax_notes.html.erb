@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <% @sax_notes.each do |sax_note| %>
+      <div class="col-xs-6 col-sm-4 col-md-3" style="height: 350px;">
+        <div>
+          <%= sax_note.note %>
+          <%= sax_note.number %>
+        </div>
+        <%#= image_tag sax_note.note_image.url %>
+        <img src="<%= sax_note.drive_image %>">
+        <div>
+          <%= link_to 'Show', sax_note, class: 'btn btn-default btn-sm' %>
+          <%= link_to 'Edit', edit_sax_note_path(sax_note), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', sax_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# SaxNote.find_by_sql("SELECT note FROM sax_notes ORDER BY number").each do |sax| %>
+  <%#= sax.note %>
+<%# end %>

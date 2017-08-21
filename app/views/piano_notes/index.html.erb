@@ -1,0 +1,37 @@
+<div class="container-fluid cover">
+  <h2 class="text_h2">Piano Notes</h2>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Note</th>
+        <th>Number</th>
+        <th>Key</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @piano_notes.each do |piano_note| %>
+        <tr>
+          <td><%= piano_note.note %></td>
+          <td><%= piano_note.number %></td>
+          <td><%= piano_note.key %></td>
+          <td><%= link_to 'Show', piano_note %></td>
+          <td><%= link_to 'Edit', edit_piano_note_path(piano_note) %></td>
+          <td><%= link_to 'Destroy', piano_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <hr>
+  <%= render 'shared/piano' %>
+  <br>
+  <hr>
+  <br>
+  <br>
+  <hr>
+  <%= link_to 'New Piano Note', new_piano_note_path %>
+</div>

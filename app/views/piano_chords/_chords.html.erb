@@ -1,0 +1,157 @@
+<div class="container-fluid cover">
+
+	<%= form_tag(piano_chords_path, method: :get) do %>
+		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
+		<%= select_tag :chord_value, options_for_select(@all_chords, params[:chord_value]), :class => "dropdown-toogle btn" %>
+		<%#= select_tag :chord_value, opions_from_collection_for_select(chord.all, "id", "name", :chord_value), {:include_blank => "select chord"} %>
+		<%#= text_field_tag :start_note, params[:start_note] %>
+
+	 	<%# @all_chords.each do |chord_name| %>
+			<%#= link_to chord_name, :controller => "piano_chords", :chord_value => "#{chord_name}", class: 'btn btn-primary' %>
+			<%#= submit_tag chord_name, name: params[:chord_value], id: "chord_button", class: 'btn btn-primary' %>
+		<%# end %>
+		<%= submit_tag 'View Chord', name: nil, id: "chord_button", class: 'btn btn-primary' %>
+		
+	<% end %>
+
+
+ 	<%# @all_chords.each do |chord_name| %>
+		<%#= link_to chord_name, :controller => "piano_chords", :chord_value => "#{chord_name}", class: 'btn btn-primary' %> 
+	<%# end %>
+	<hr>
+
+	<!-- Print Out Values-->
+	<h3> <%= @main_chord[0].to_s + " " + @get_chord_value.to_s + " chord"  %></h3>
+	<hr>
+	<div class="#piano-cover" style="overflow-x: scroll(or auto);">
+		<ul class="piano">
+			<% previous = "" %>
+			<% point = 0%>
+				
+			<% @piano_notes.each do |piano| %>
+				<% ms = @main_chord[point] %>
+				<% if point > 2 && @main_chord[point] == @main_chord.count then %>
+			    	<% break %>
+			    <% end %>
+				
+				<% if ms == piano.note %>
+					<% point += 1%>
+			    
+
+			    <% if piano.key == "white" %>
+			      <% if previous == "white" %>
+			        <li>
+			          <div class="transparent-key"></div>
+			        </li>
+			        <li>
+			          <div class="white-key" style="background-color: green"> 
+			            <span class="letter-white"><%= piano.note %></span> 
+			          </div>
+			        </li>
+			      <% else %>
+			        <li>
+			          <div class="white-key" style="background-color: green"> 
+			            <span class="letter-white"><%= piano.note %></span> 
+			          </div>
+			        </li>
+			      <% end %>
+
+
+			      <% previous = piano.key %>
+
+
+			    <% else %>
+			          <li>
+			            <div class="black-key" style="background-color: green"> 
+			              <span class="letter-black"><%= piano.note %></span> 
+			            </div>
+			          </li>
+
+			          <% previous = piano.key %>
+
+			    <% end %>
+
+
+				<% else %>
+
+			    <% if piano.key == "white" %>
+			      <% if previous == "white" %>
+			        <li>
+			          <div class="transparent-key"></div>
+			        </li>
+			        <li>
+			          <div class="white-key"> 
+			            <span class="letter-white"><%= piano.note %></span> 
+			          </div>
+			        </li>
+			      <% else %>
+			        <li>
+			          <div class="white-key"> 
+			            <span class="letter-white"><%= piano.note %></span> 
+			          </div>
+			        </li>
+			      <% end %>
+
+
+			      <% previous = piano.key %>
+
+
+			    <% else %>
+			          <li>
+			            <div class="black-key"> 
+			              <span class="letter-black"><%= piano.note %></span> 
+			            </div>
+			          </li>
+
+			          <% previous = piano.key %>
+
+
+			    <% end %>
+
+			<% end %>
+
+
+			<% end %>
+
+	</div>
+
+
+	<%# @main_chord.each do |p| %>
+		<%#= p %>
+	<%# end %>
+
+
+	</ul>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<hr>
+</div>
+
+<%= link_to 'New Piano Chord', new_piano_chord_path, class: "btn btn-primary btn-md" %>
+<hr>
+
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Interval</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @piano_chords.each do |piano_chord| %>
+        <tr>
+          <td><%= piano_chord.name %></td>
+          <td><%= piano_chord.interval %></td>
+          <td><%= link_to 'Show', piano_chord, class: "btn btn-default" %></td>
+          <td><%= link_to 'Edit', edit_piano_chord_path(piano_chord), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Destroy', piano_chord, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

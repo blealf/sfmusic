@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @piano_note.note %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @piano_note.number %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @piano_note.key %>
+</p>
+
+<%= link_to 'Edit', edit_piano_note_path(@piano_note) %> |
+<%= link_to 'Back', piano_notes_path %>
