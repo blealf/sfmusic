@@ -1,4 +1,4 @@
-<div class="container-fluid cover">
+<div class="jcontainer-fluid cover">
 
 	<%= form_tag(piano_chords_path, method: :get) do %>
 		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
