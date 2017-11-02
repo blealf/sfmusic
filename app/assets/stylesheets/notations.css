@@ -1,0 +1,44 @@
+.sax-note {
+	padding: 0px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.notation {
+	//height: 300px;
+	//margin-top: 20px;
+	margin-right: 5px;
+	width: 80px;
+	float: left;
+	display: inline;
+	margin-bottom: 20px;
+}
+
+.notation img {
+	width: 100%;
+	height: 200px;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+
+.note-cover .btn {
+	border-bottom: 1px solid grey;
+}
+
+
+.note {
+	width: 100%;
+}
+
+@media only screen and (max-width: 400px) {
+	.notation {
+		margin-right: 5px;
+		width: 75px;
+	}
+
+	.notation img {
+		height: 160px;
+	}
+
+}

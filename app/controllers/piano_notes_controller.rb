@@ -1,5 +1,6 @@
 class PianoNotesController < ApplicationController
   before_action :set_piano_note, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   # GET /piano_notes
   # GET /piano_notes.json

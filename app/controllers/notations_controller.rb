@@ -1,5 +1,7 @@
 class NotationsController < ApplicationController
 
+  before_action :admin_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  
   def index
   	
   	# collect start note and chosen scale from view

@@ -1,5 +1,6 @@
 class ScalesController < ApplicationController
   before_action :set_scale, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   # GET /scales
   # GET /scales.json

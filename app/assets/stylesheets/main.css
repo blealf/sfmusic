@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+html {
+	height: 100%;
+	box-sizing: border-box
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding-bottom: 6rem;
+	min-height: 100%;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/*
+#####################################################################
+*/
+
+.main-image {
+	width: 100%;
+	//opacity: 0.7;
+	//min-height: 600px;
+	background-image: url(https://farm5.staticflickr.com/4457/38119314001_ddc1f29d0e_o_d.jpg);
+	//background-image: url(PianoMain-pixabay.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+
+}
+
+.menu-top {
+	width: 100%;
+	height:120px;
+	border-radius: 0px;
+	width: 100%;
+	background-color: #464646;
+	
+/*	background-image: url(PianoMain-pixabay.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;*/
+}
+
+
+.navig {
+	display: block;
+	//opacity: 0.5;
+	padding: 5px;
+	color: white;
+	margin-top: -15px;
+	max-width: 1200px;
+	margin: 0 auto;
+
+
+	/*
+	#################################################
+	*/
+	
+/*	position: fixed;
+	right: 0;
+	top: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: black;
+	text-align: center;
+	z-index: 1;
+	margin-top: -40px;*/
+}
+
+.navig-brand {
+	float: left;
+	padding-top: 40px;
+
+}
+
+.navig-brand h1 a {
+	color: white;
+	text-decoration: none;
+}
+
+.navig-brand h1 a:hover {
+	text-decoration: none;
+}
+
+.navig-brand  h1 {
+	margin-left: 20px;
+	padding: 10px;
+	font-size: 50px;
+	font-family: "Montserrat";
+	font-weight: lighter;
+	padding-top: 60px;
+}
+
+.navig-brand button, .navig-brand h1 {
+	display: inline;
+}
+
+.navig-brand button {
+	background-color: #161616;
+	float: left;
+	height: 50px;
+	width: 50px;
+	margin-left: 20px;
+	border: none;
+	display: none;
+}
+
+.glyphicon-menu-hamburger {
+	font-size: 30px;
+}
+/*
+############################################################
+*/
+
+.navig-elements {
+	float: right;
+	padding: 5px;
+	font-family: "Lato";
+	font-size: 20px;
+	padding-top: 50px;
+}
+
+.navig-elements ul {
+	display: block;
+}
+
+.navig-elements ul li {
+	display: inline;
+	padding: 8px;
+}
+
+.navig-elements ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+.navig-elements ul li a:hover {
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.navig-elements ul li.dropdown ul.dropdown-menu {
+	
+	display: none;
+	background-color: grey;
+	color: white;
+	font-family: "Lato";
+	font-size: 20px;
+	
+}
+
+#account-menu li a, #piano-menu li a {
+	padding: 10px;
+	padding-left: 20px;
+	//border: 2px solid white;
+	margin-top: -15px;
+}
+
+#piano-menu li a {
+	margin-top: 0px;
+
+}
+
+.navig-elements ul li.dropdown ul.dropdown-menu li a:hover {
+	color: white;
+	background-color: #161616;
+}
+
+.piano-btn {
+	border: 0px;
+	background: transparent;
+	//font-size: 20px;
+	font-family: "Lato";
+	//border: 2px solid white;
+	margin-bottom: 0px;
+}
+
+/*
+############################################################
+*/
+.m-navig-elements {
+	clear: both;
+	//display: none;
+	padding: 10px;
+	font-family: "Lato";
+	font-size: 30px;
+	padding-top: 50px;
+	width: 100%;
+	z-index: 5;
+}
+
+.m-navig-elements ul li {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	//border-bottom: 1px solid white;
+	margin-left: -40px;
+}
+
+.m-navig-elements ul li a, .m-navig-elements ul li button, {
+	color: white;
+	width: 100%;
+	text-decoration: none;
+}
+
+.m-navig-elements #piano-menu {
+	margin-top: -70px;
+}
+
+.m-navig-elements #piano-menu li {
+	width: 100%;
+}
+
+.m-navig-elements ul li a:hover {
+/*	color: #f46e42;
+	background-color: black;
+	padding: 10px;
+	text-decoration: none;
+	//font-size: 44px;
+	font-weight: bolder;
+	width: 500px;*/
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.m-navig-elements ul li.dropdown ul.dropdown-menu {
+	width: 100%;
+}
+
+/*
+############################################################
+*/
+.m-section1 {
+	padding-top: 200px;
+}
+
+.section1 {
+	clear: both;
+	color: white;
+	padding: 20px;
+	padding-top: 50px;
+
+	text-align: center;
+    //margin-top: 80px;
+    //margin-bottom: 100px;
+
+/*	background-color: #f46e42;
+	width: 100%;
+	min-height: 600px;
+	z-index: 1;
+	opacity: 0.3;*/
+}
+
+.section1 h1, p {
+	text-align: center;
+	font-family: "Lato";
+}
+
+.section1 h1 {
+	font-size: 85px;
+	font-weight: bolder;
+}
+
+.section1 p {
+	font-size: 22px;
+}
+
+.section1 .btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fffbfb !important;
+    outline:none;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 18px 24px;
+    transition:0.2s background-color;
+    border-radius: 0px;
+}
+
+.section1 .btn-primary:hover {
+    background-color:rgba(255,255,255,0.1);
+}
+
+.section1 .btn-primary:active {
+    transform:translateY(1px);
+}
+
+@media only screen and (max-width: 992px){
+	.main-image {
+		min-height: 500px;
+	}
+
+	.section1 {
+		min-height: 500px;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.main-image {
+		min-height: 400px;
+		padding-bottom: 30%;
+	}
+
+	.menu-top {
+		height: 80px;
+		background-color: transparent;
+	}
+
+
+	.navig {
+		position: fixed;
+		right: 0;
+		top: 0;
+		left: 0;
+		padding: 1rem;
+		background-color: #282725;
+		text-align: center;
+		z-index: 1;
+		margin-top: -40px;
+	}
+
+	.navig-brand button {
+		display: block;
+	}
+
+	.navig-elements {
+		display: none;
+	}
+
+	.m-navig-elements {
+		//display: block;
+	}
+
+	.section1 {
+		min-height: 400px;
+		padding-top: 180px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.navig-brand  h1 {
+		font-size: 30px;
+	}
+
+}
+
+/*
+##################################################################
+*/
+
+.icon-container {
+	//margin-top: 50rem;
+	min-height: 600px;
+	width: 100%;
+}
+
+.icon-house {
+	padding: 20px;
+	margin-top: 10rem;
+	//border: 1px solid grey;
+}
+
+.icon-image {
+	margin: 0 auto;
+	height: 150px;
+	width: 150px;
+	//border: 5px solid #f46e42;
+	border: 5px solid #e0be47;
+	-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icon-house img {
+	height: 150px;
+	width: 150px;
+}
+
+.icon-header {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 90px;
+}
+
+.icon-writing {
+	width: 100%;
+	margin-top: 20px;
+	text-align: justify;
+	//border: 1px solid grey;
+	font-size: 22px;
+	line-height: 150%;
+}
+
+.h3_text {
+	margin: 0 auto;
+	font-family: "Lato";
+	font-size: 35px;
+}
+
+
+/*
+#####################################################################
+*/
+
+.middle-cover {
+	margin-top: 10rem;
+	width: 100%;
+	//opacity: 0.7;
+	min-height: 450px;
+	background-image: url(https://farm5.staticflickr.com/4528/38119314381_3c048f0571_o_d.jpg);
+	//background-image: url(Piano5-pixabay.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+	padding: 30px;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+}
+
+.middle-writing {
+	margin-top: 20px;
+	padding: 20px;
+	width: 100%;
+	//color: white;
+	//height: 200px;
+	background-color: #e0be47;
+}
+
+.middle-writing h3 {
+	font-size: 30px;
+	font-weight: lighter;
+}
+
+.middle-writing p {
+	font-size: 22px;
+	line-height: 150%;
+	text-align: justify;
+}
+
+/*
+#####################################################################
+*/
+
+.pointers {
+	margin: 0 auto;
+	width: 98%;
+	margin-top: 20px;
+	margin-bottom: 10rem;
+	//height: 600px;
+}
+
+.img-link {
+	text-decoration: none;
+
+}
+
+.img-link:hover {
+	text-decoration: none;
+}
+
+.img-house {
+	padding: 20px;
+}
+
+.pointer {
+	width: 100%;
+	//box-shadow: 5px -5px 5px grey;
+	opacity: 0.7;
+	border-right: 0.5px solid #e0be47;
+	border-left: 0.5px solid #e0be47;
+	border-top: 0.5px solid #e0be47;
+	-webkit-box-shadow: 8 0px 16px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 8 0px 16px rgba(0, 0, 0, 0.3);
+	box-shadow: 8 0px 16px rgba(0, 0, 0, 0.3);
+}
+
+.img-writing {
+	padding: 10px;
+	opacity: 1;
+	color: black;
+	//background-color: #FFAC92;
+	background-color: #e0be47;
+	font-family: "Lato";
+	font-size: 22px;
+	border-right: 0.5px solid #e0be47;
+	border-left: 0.5px solid #e0be47;
+	border-bottom: 0.5px solid #e0be47;
+	text-align: center;
+	-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.img-writing h3 {
+	font-size: 35px;
+}
+
+/*
+#####################################################################
+*/
+
+
+.base {
+	margin-top: 10rem;
+	width: 100%;
+	min-height: 450px;
+	//background-image: url(SaxophoneB-pixabay.jpg);
+	background-image: url(https://farm5.staticflickr.com/4522/38119313341_43ef16e36a_o_d.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+	padding: 2rem;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	margin-bottom: 10rem;
+}
+
+
+.base-content {
+	padding: 10px;
+	background-color: #e0be47;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+	-webkit-box-shadow: 0 8px 16px grey;
+	-moz-box-shadow: 0 8px 16px grey;
+	box-shadow: 0 8px 16px grey;
+}
+
+.base-content h3 {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 35px;
+	text-align: center;
+	color: black;
+}
+
+.base-content form  {
+	padding: 10px;
+	color: black;
+}
+
+.base-content form .form-group label {
+	font-family: 'PT Sans', sans-serif;
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 24px;
+	font-weight: lighter;
+}
+
+.base-content form .form-group input {
+	border-radius: 0px;
+	-webkit-box-shadow: 8px 0px 16px #c1b27d;
+	-moz-box-shadow: 8px 0px 16px #c1b27d;
+	box-shadow: 8px 0px 16px #c1b27d;
+
+}
+
+.base-content form .form-group .InputValue{
+	height: 4em;
+}
+
+.base-content form .form-group textarea {
+	height: 10em;
+	-webkit-box-shadow: 8px 0px 16px #c1b27d;
+	-moz-box-shadow: 8px 0px 16px #c1b27d;
+	box-shadow: 8px 0px 16px #c1b27d;
+}
+
+
+
+.base-content form .btn-lg {
+	border-radius: 0px;
+	text-align: center;
+	width: 200px;
+	-webkit-box-shadow: 0 8px 16px grey;
+	-moz-box-shadow: 0 8px 16px grey;
+	box-shadow: 0 8px 16px grey;
+
+}
+
+
+/*
+#####################################################################
+*/
+
+.base-footer {
+	width: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	//background-color: #e0be47;
+	background-color: #e0be47;
+	text-align: center;
+	text-align: center;
+	//color: white;
+	font-family: "Lato";
+	padding-top: 20px;
+	
+}
+
+.base-footer p {
+	font-size: 15px;
+}
+
+#p1 {
+	margin-top: 10px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* Instagram */
+.fa-instagram{
+    background: #125688;
+    color: white;
+}
+
+/* linkedin*/
+.fa-linkedin {
+    background: #125688;
+    color: white;
+}

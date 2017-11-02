@@ -1,35 +1,45 @@
-<div class="container-fluid">
-	<h1>Notations</h1>
+<% provide(:title, "Saxophone Scales") %>
+<div class="container-fluid cover" id="cover">
 
+	<h3 class="text_h2" style="margin-top: -20px"><%= link_to "All Sax Notes", sax_notes_path, class: 'btn btn-lg btn-success', style: "padding: 20px; z-index: -10; border: 1px black dashed; color: black" %></h3>
 
-	<%= form_tag(notations_path, method: :get) do %>
-		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
-		<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn" %>
-		<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
-		<%#= text_field_tag :start_note, params[:start_note] %>
-		<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary' %>
+	<h2 class="text_h2" >Alto Saxophone Fingering Scales</h2>
+
+	<div class="drop-cover">
 		
-	<% end %>
+
+
+		<%= form_tag(notations_path, method: :get) do %>
+			<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+			<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+			<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+			<%#= text_field_tag :start_note, params[:start_note] %>
+			<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary btn-lg' %>
+			
+		<% end %>
 
 
 
 
-	<h2> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %></h2>
-	<br>
+		<h2 class="scale_name"> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %></h2>
 
-	<%# @main_scale.each do |ms| %>
-		<%#= ms %>
-	<%# end %>
+		<%# @main_scale.each do |ms| %>
+			<%#= ms %>
+		<%# end %>
+	</div>
+
+
 	<hr>
-	<div class="row">
+	<div class="sax-note">
 		<% @main_scale.each do |ms| %>
-			<div class="col-xs-4 col-sm-3 col-md-2 col-lg-1.5 notation">
+			<div class="notation">
 				<% SaxNote.where("note = ? ", "#{ms}").find_each do |f| %>
 					<% if  !(f.note == nil) %>
 						<div class="text_h2 note-cover">
 							<button class="btn btn-inverse note"> <%= label_tag f.note %> </button> 
 						</div>
-						<%= image_tag f.note_image.url %>
+						<%#= image_tag f.note_image.url %>
+						<%= image_tag f.drive_image %>
 				<% end %>
 					<%#= label_tag f.note, nil,  class: "scale_name" %>
 			<% end %>

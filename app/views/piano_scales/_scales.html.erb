@@ -1,18 +1,23 @@
-<%= form_tag(piano_scales_path, method: :get) do %>
-	<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
-	<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn" %>
-	<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
-	<%#= text_field_tag :start_note, params[:start_note] %>
-	<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary' %>
-	
-<% end %>
 
-<hr>
 
-<!-- Print Out Values-->
-<h3> <%= @main_scale[0].to_s + " " + @get_scale_value.to_s + " Scale"  %></h3>
+<div class="drop-cover">
+	<%= form_tag(piano_scales_path, method: :get) do %>
+		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn-lg scale_btn" %>
+		<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn-lg scale_btn" %>
+		<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+		<%#= text_field_tag :start_note, params[:start_note] %>
+		<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary btn-lg' %>
+		
+	<% end %>
+
+
+	<hr>
+
+	<!-- Print Out Values-->
+	<h3 class="scale_name"> <%= @main_scale[0].to_s + " " + @get_scale_value.to_s + " Scale"  %></h3>
+</div>
 <hr>
-<div class="row">
+<div class="piano-cover">
 	<ul class="piano">
 		<% previous = "" %>
 		<% point = 0%>
@@ -116,28 +121,32 @@
 <br> -->
 <hr>
 
- <%= link_to 'New Piano Scale', new_piano_scale_path, class: "btn btn-primary btn-md" %>
-  <hr>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Interval</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<% if logged_in? %>
+   	<% if current_user.admin? %>
+		<%= link_to 'New Piano Scale', new_piano_scale_path, class: "btn btn-primary btn-md" %>
+		<hr>
+		<table class="table table-striped table-hover">
+			<thead>
+			  <tr>
+			    <th>Name</th>
+			    <th>Interval</th>
+			    <th colspan="3"></th>
+			  </tr>
+			</thead>
 
-    <tbody>
-      <% @piano_scales.each do |piano_scale| %>
-        <tr>
-          <td><%= piano_scale.name %></td>
-          <td><%= piano_scale.interval %></td>
-          <td><%= link_to 'Show', piano_scale, class: "btn btn-default" %></td>
-          <td><%= link_to 'Edit', edit_piano_scale_path(piano_scale), class: "btn btn-primary" %></td>
-          <td><%= link_to 'Destroy', piano_scale, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+			<tbody>
+			  <% @piano_scales.each do |piano_scale| %>
+			    <tr>
+			      <td><%= piano_scale.name %></td>
+			      <td><%= piano_scale.interval %></td>
+			      <td><%= link_to 'Show', piano_scale, class: "btn btn-default btn-xs" %></td>
+			      <td><%= link_to 'Edit', edit_piano_scale_path(piano_scale), class: "btn btn-primary btn-xs" %></td>
+			      <td><%= link_to 'Destroy', piano_scale, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+			    </tr>
+			  <% end %>
+			</tbody>
+		</table>
+	<% end %>
+<% end %>
 
   <br>

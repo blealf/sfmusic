@@ -1,6 +1,7 @@
 class PianoScalesController < ApplicationController
   before_action :set_piano_scale, only: [:show, :edit, :update, :destroy]
-
+  before_action :admin_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  
   # GET /piano_scales
   # GET /piano_scales.json
   def index

@@ -1,8 +1,8 @@
-<div class="jcontainer-fluid cover">
 
+<div class="drop-cover">
 	<%= form_tag(piano_chords_path, method: :get) do %>
-		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn" %>
-		<%= select_tag :chord_value, options_for_select(@all_chords, params[:chord_value]), :class => "dropdown-toogle btn" %>
+		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+		<%= select_tag :chord_value, options_for_select(@all_chords, params[:chord_value]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
 		<%#= select_tag :chord_value, opions_from_collection_for_select(chord.all, "id", "name", :chord_value), {:include_blank => "select chord"} %>
 		<%#= text_field_tag :start_note, params[:start_note] %>
 
@@ -10,7 +10,7 @@
 			<%#= link_to chord_name, :controller => "piano_chords", :chord_value => "#{chord_name}", class: 'btn btn-primary' %>
 			<%#= submit_tag chord_name, name: params[:chord_value], id: "chord_button", class: 'btn btn-primary' %>
 		<%# end %>
-		<%= submit_tag 'View Chord', name: nil, id: "chord_button", class: 'btn btn-primary' %>
+		<%= submit_tag 'View Chord', name: nil, id: "chord_button", class: 'btn btn-primary btn-lg' %>
 		
 	<% end %>
 
@@ -21,9 +21,10 @@
 	<hr>
 
 	<!-- Print Out Values-->
-	<h3> <%= @main_chord[0].to_s + " " + @get_chord_value.to_s + " chord"  %></h3>
+	<h3 class="scale_name"> <%= @main_chord[0].to_s + " " + @get_chord_value.to_s + " chord"  %></h3>
+</div>
 	<hr>
-	<div class="#piano-cover" style="overflow-x: scroll(or auto);">
+	<div class="piano-cover" style="overflow-x: scroll(or auto);">
 		<ul class="piano">
 			<% previous = "" %>
 			<% point = 0%>
@@ -119,7 +120,9 @@
 	<%# @main_chord.each do |p| %>
 		<%#= p %>
 	<%# end %>
-
+	<div>
+		<p></p>
+	</div>
 
 	</ul>
 	<br>
@@ -129,29 +132,33 @@
 	<br>
 	<br>
 	<hr>
-</div>
 
-<%= link_to 'New Piano Chord', new_piano_chord_path, class: "btn btn-primary btn-md" %>
-<hr>
 
-<table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Interval</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<% if logged_in? %>
+   	<% if current_user.admin? %>
+		<%= link_to 'New Piano Chord', new_piano_chord_path, class: "btn btn-primary btn-md" %>
+		<hr>
 
-    <tbody>
-      <% @piano_chords.each do |piano_chord| %>
-        <tr>
-          <td><%= piano_chord.name %></td>
-          <td><%= piano_chord.interval %></td>
-          <td><%= link_to 'Show', piano_chord, class: "btn btn-default" %></td>
-          <td><%= link_to 'Edit', edit_piano_chord_path(piano_chord), class: "btn btn-primary" %></td>
-          <td><%= link_to 'Destroy', piano_chord, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+		<table class="table table-striped table-hover">
+		    <thead>
+		      <tr>
+		        <th>Name</th>
+		        <th>Interval</th>
+		        <th colspan="3"></th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <% @piano_chords.each do |piano_chord| %>
+		        <tr>
+		          <td><%= piano_chord.name %></td>
+		          <td><%= piano_chord.interval %></td>
+		          <td><%= link_to 'Show', piano_chord, class: "btn btn-default" %></td>
+		          <td><%= link_to 'Edit', edit_piano_chord_path(piano_chord), class: "btn btn-primary" %></td>
+		          <td><%= link_to 'Destroy', piano_chord, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+		        </tr>
+		      <% end %>
+		    </tbody>
+		</table>
+	<% end %>
+<% end %>

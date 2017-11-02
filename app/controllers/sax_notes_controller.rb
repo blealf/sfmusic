@@ -1,6 +1,7 @@
 class SaxNotesController < ApplicationController
   before_action :set_sax_note, only: [:show, :edit, :update, :destroy]
-
+  before_action :admin_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  
   # GET /sax_notes
   # GET /sax_notes.json
   def index

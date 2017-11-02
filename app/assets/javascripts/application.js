@@ -13,6 +13,7 @@
 //= require jquery3
 //= require jquery
 //= require jquery_ujs
+//= require main
 //= require bootstrap.min
 //= require popper
 //= require turbolinks

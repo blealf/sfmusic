@@ -1,5 +1,6 @@
 class PianoChordsController < ApplicationController
   before_action :set_piano_chord, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:new, :create, :show, :edit, :update, :destroy]
 
   # GET /piano_chords
   # GET /piano_chords.json

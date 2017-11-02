@@ -12,8 +12,10 @@
  *
  *= rquire bootstrap.min
  *= require rails_bootstrap_forms
+ *= require main
  *= require piano_notes
  *= require notations
+ *= require piano_scales
  *= rquire_tree .
  *= require_self
  */
@@ -35,24 +37,59 @@ font-family: 'Rakkas', cursive;
 */
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 #main_front {
 	margin-top: -20px;
 }
 
-.btn, .butn {
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+.btn, .butn, .btn-lg {
+/*	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;*/
+	border-radius: 0px;
+
 }
 
 .text_h2 {
 	text-align: center;
-	font-weight: bolder;
+	font-family: "Lato";
+	font-size: 35px;
+	padding-bottom: 20px;
 }
 
 .cover {
 	margin: 0 auto;
-	max-width: 1200px;
+	//max-width: 1200px;
+	//width: 95%;
 
+}
+
+.cover-margin {
+	padding-top: 400px;
+}
+
+.above-footer {
+	padding-bottom: 10rem;
+	margin-bottom: 10rem;
+}
+
+.drop-cover {
+	margin: 0 auto;
+	width: 300px;
+}
+
+#scale_button, #chord_button {
+	margin-top: 20px;
+	width: 300px;
+}
+
+.scale_btn {
+	font-family: "Lato";
+	font-size: 18px;
+	border: none;
+}
+
+.scale_name {
+	font-family: "Lato";
+	font-size: 30px;
 }

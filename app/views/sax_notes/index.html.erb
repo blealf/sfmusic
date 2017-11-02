@@ -1,6 +1,11 @@
-
+<% provide(:title, "Saxophone Notes") %>
 <div class="container-fluid">
-  <%= link_to 'New Sax Note', new_sax_note_path, class: 'btn btn-primary' %>
+<br>
+    <% if logged_in? %>
+      <% if current_user.admin? %>
+  			<%= link_to 'New Sax Note', new_sax_note_path, class: 'btn btn-primary' %>
+  		<% end %>
+  	<% end %>
   <hr>
   <%= render 'sax_notes' %>
 </div>

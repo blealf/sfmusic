@@ -1,19 +1,29 @@
 
+
 <div class="container-fluid">
   <div class="row">
     <% @sax_notes.each do |sax_note| %>
-      <div class="col-xs-6 col-sm-4 col-md-3" style="height: 350px;">
+      <div class="col-xs-4 col-sm-3 col-md-2" style="height: 350px; margin-top: 20px;">
         <div>
-          <%= sax_note.note %>
-          <%= sax_note.number %>
+          <h3><%= sax_note.note %></h3>
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <%= sax_note.number %>
+            <% end %>
+          <% end %>
         </div>
         <%#= image_tag sax_note.note_image.url %>
         <img src="<%= sax_note.drive_image %>">
-        <div>
-          <%= link_to 'Show', sax_note, class: 'btn btn-default btn-sm' %>
-          <%= link_to 'Edit', edit_sax_note_path(sax_note), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Delete', sax_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
-        </div>
+        <!-- <img src="<%= sax_note.note_image.url %>"> -->
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <div>
+              <%= link_to 'Show', sax_note, class: 'btn btn-default btn-sm' %>
+              <%= link_to 'Edit', edit_sax_note_path(sax_note), class: 'btn btn-primary btn-sm' %>
+              <%= link_to 'Delete', sax_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
