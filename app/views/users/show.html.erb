@@ -5,10 +5,10 @@
   <%= @user.email %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+  <%#= @user.password_digest %>
+</p> -->
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
