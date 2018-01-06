@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20171101145147) do
     t.datetime "updated_at",                      null: false
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
 end
