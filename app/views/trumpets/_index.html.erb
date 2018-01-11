@@ -1,0 +1,28 @@
+
+<h2>Trumpets</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Note</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trumpets.each do |trumpet| %>
+      <tr>
+        <td><%= trumpet.number %></td>
+        <td><%= trumpet.note %></td>
+        <td><%= trumpet.value %></td>
+        <td><%= link_to 'Show', trumpet %></td>
+        <td><%= link_to 'Edit', edit_trumpet_path(trumpet) %></td>
+        <td><%= link_to 'Destroy', trumpet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

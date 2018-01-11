@@ -8,8 +8,9 @@
 	        <ul>
 	            <li><a href="<%= root_url %>"> Home       </a></li>
 	            <li><a href="<%= notations_path %>">Sax </a></li>
+	            <li><a href="<%= notations_path %>">Trumpet </a></li>
 	            <li><a href="<%= piano_path %>">Piano </a></li>
-	            <li><a href="#"> Scores     </a></li>
+	            <li><a href="#"> Scores    </a></li>
 	            <% if current_user.nil? %>
 	              <%= link_to 'Sign Up', signup_path, class: 'btn btn-primary login-button' %>
 	              <%= link_to 'Login', login_path, class: 'btn btn-primary login-button' %>

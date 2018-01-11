@@ -1,0 +1,74 @@
+<% provide(:title, "Trumpet Scales") %>
+
+
+<button class="btn btn-primary toggle_btn"> Toggle Navigation <span class="glyphicon glyphicon-menu-down"></span> </button>
+<div class="container-fluid cover" id="cover">
+
+	<div class="nav_toggle">
+
+		<div class="container-fluid trumpet_legend_cover">
+			<div class="legend_label"><h4> Legend: </h4> </div>
+			<div class="trumpet_legend">1</div>
+			<div class="trumpet_legend">2</div>
+			<div class="trumpet_legend">3</div>
+			<div class="legend_label"><%= link_to "All Notes", trumpets_path, class: "btn btn-success" %></div>
+		</div>
+
+		<h2 class="text_h2" >Trumpet Scales Fingering </h2>
+
+		<div class="drop-cover">
+			
+
+
+			<%= form_tag(trumpet_scales_index_path, method: :get) do %>
+				<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+				<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+				<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+				<%#= text_field_tag :start_note, params[:start_note] %>
+				<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary btn-lg' %>
+				
+			<% end %>
+
+		</div>
+	</div>
+		
+	<div class="drop-cover">
+
+		<h2 class="scale_name" style="font-size: 1.6em"> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %> & Piano: <%= @pianoscale %></h2>
+	</div>
+
+	<div class="container-fluid">
+
+		<% @main_scale.each do |ms| %>
+				<% Trumpet.where("note = ? ", "#{ms}").find_each do |f| %>
+
+				<div class="col-xs-4 col-sm-2 col-md-1 trump_container">
+					<% if  !(f.note == nil) %>
+						<div class="text_h2 note-cover">
+							<button class="btn btn-inverse note"> <%= label_tag f.note %> </button> 
+						</div>
+				        <div class="trumpet_holes">
+				          <% f.value.split(",").each do |value| %>
+
+				            <% if value == "1" %>
+				              <div class="trumpet_circle pressed"></div>
+				            <% else %>
+				              <div class="trumpet_circle"></div>
+				            <% end %>
+
+				         <% end %> 
+				        </div>
+					<% end %>
+					<%#= label_tag f.note, nil,  class: "scale_name" %>
+					</div>
+				<% end %>
+		<% end %>
+			
+		</div>
+
+
+	
+</div>
+
+
+

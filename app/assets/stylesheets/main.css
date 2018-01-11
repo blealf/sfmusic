@@ -128,9 +128,9 @@ body {
 
 .navig-elements {
 	float: right;
-	padding: 5px;
+	padding: 2px;
 	font-family: "Lato";
-	font-size: 20px;
+	font-size: 15px;
 	padding-top: 50px;
 }
 
@@ -140,7 +140,7 @@ body {
 
 .navig-elements ul li {
 	display: inline;
-	padding: 8px;
+	padding: 3px;
 }
 
 .navig-elements ul li a {
@@ -159,7 +159,7 @@ body {
 	background-color: grey;
 	color: white;
 	font-family: "Lato";
-	font-size: 20px;
+	font-size: 15px;
 	
 }
 

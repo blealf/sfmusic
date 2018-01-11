@@ -85,38 +85,6 @@ Scale.create!([
   {name: "Pentatonic", value: "2,2,3,2,3"},
   {name: "Blues", value: "2,1,2,2,1,2"}
 ])
-Trumpet.create!([
-  {number: 1, note: "Gb1", value: "1,1,1"},
-  {number: 3, note: "Ab1", value: "0,1,1"},
-  {number: 4, note: "A1", value: "1,1,0"},
-  {number: 5, note: "Bb1", value: "1,0,0"},
-  {number: 6, note: "B1", value: "0,1,0"},
-  {number: 7, note: "C1", value: "0,0,0"},
-  {number: 9, note: "D1", value: "1,0,1"},
-  {number: 10, note: "Eb1", value: "0,1,1"},
-  {number: 11, note: "E1", value: "1,1,0"},
-  {number: 12, note: "F1", value: "1,0,0"},
-  {number: 13, note: "Gb2", value: "0,1,0"},
-  {number: 8, note: "Db1", value: "1,1,1"},
-  {number: 14, note: "G2", value: "0,0,0"},
-  {number: 15, note: "Ab2", value: "0,1,1"},
-  {number: 16, note: "A2", value: "1,1,0"},
-  {number: 17, note: "Bb2", value: "1,0,0"},
-  {number: 18, note: "B2", value: "0,1,0"},
-  {number: 19, note: "C2", value: "0,0,0"},
-  {number: 20, note: "Db", value: "1,1,0"},
-  {number: 21, note: "D2", value: "1,0,0"},
-  {number: 22, note: "Eb2", value: "0,1,0"},
-  {number: 23, note: "E2", value: "0,0,0"},
-  {number: 24, note: "F2", value: "1,0,0"},
-  {number: 25, note: "Gb3", value: "0,1,0"},
-  {number: 26, note: "G3", value: "0,0,0"},
-  {number: 27, note: "Ab3", value: "0,1,1"},
-  {number: 28, note: "A3", value: "1,1,0"},
-  {number: 29, note: "Bb3", value: "1,0,0"},
-  {number: 30, note: "B3", value: "0,1,0"},
-  {number: 2, note: "G1", value: "1,0,1"}
-])
 User.create!([
   {email: "blealf@gmail.com", password_digest: "$2a$10$HWbVa8/QPxCTF.CIttZeSOL7saKMIc1Vn/8jflcqnB8W42UZjJtaG", remember_digest: nil, admin: false},
   {email: "blealf20@gmail.com", password_digest: "$2a$10$/K2nznTalub2i5QG6yOVO.YgYpAzJJSf6GdwOmOeF0n2eAzUIAoSK", remember_digest: nil, admin: true}

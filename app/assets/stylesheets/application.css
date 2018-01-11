@@ -16,6 +16,7 @@
  *= require piano_notes
  *= require notations
  *= require piano_scales
+ *= require trumpets
  *= rquire_tree .
  *= require_self
  */
@@ -38,6 +39,9 @@ font-family: 'Rakkas', cursive;
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+
 
 #main_front {
 	margin-top: -20px;
@@ -92,4 +96,78 @@ font-family: 'Rakkas', cursive;
 .scale_name {
 	font-family: "Lato";
 	font-size: 30px;
+}
+
+
+
+
+.trump_container {
+	border: 1px solid black;
+	padding-bottom: 5px;
+}
+
+.trump {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.trumpet_holes {
+	margin: 0 auto;
+	width: 82px;
+}
+.trumpet_circle {
+	float: left;
+	margin-right: 3px;
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
+.trumpet_legend_cover {
+	margin: 0 auto;
+	width: 300px;
+	border: 1px solid black;
+	padding-bottom: 5px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.trumpet_legend, .legend_label {
+	margin-top: 5px;
+	float: left;
+	margin-right: 3px;
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
+	border: 2px solid black;
+	padding: 3px;
+	padding-left: 5px;
+}
+
+.legend_label {
+	border: none;
+	width: 60px;
+	margin-right: 20px;
+}
+
+
+.pressed {
+	background-color: green;
+}
+
+.toggle_btn {
+	display: none;
+	font-size: 1.4em;
+}
+
+@media only screen and (max-width: 500px) {
+
+	.nav_toggle {
+		display: none;
+	}
+
+	.toggle_btn {
+		display: block;
+	}
 }

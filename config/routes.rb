@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'trumpet_scales/index'
+
+  resources :trumpets
   #get 'sessions/new'
   get     'signup'  =>  'users#new'
   get     'login'   => 'sessions#new'

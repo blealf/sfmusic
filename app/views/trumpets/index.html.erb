@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trumpets</h1>
+
+<div class="container">
+  <div class="row">
+    <% @trumpets.each do |trumpet| %>
+      <div class="col-xs-2 col-sm-2 col-md-2 trump_container">
+        <p class="trump"> <%= trumpet.note %> </p>
+        <div class="trumpet_holes">
+          <% trumpet.value.split(",").each do |value| %>
+
+            <% if value == "1" %>
+              <div class="trumpet_circle pressed"></div>
+            <% else %>
+              <div class="trumpet_circle"></div>
+            <% end %>
+
+         <% end %> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Trumpet', new_trumpet_path %>

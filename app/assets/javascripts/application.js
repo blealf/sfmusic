@@ -17,4 +17,5 @@
 //= require bootstrap.min
 //= require popper
 //= require turbolinks
+//= require angular
 //= rquire_tree .

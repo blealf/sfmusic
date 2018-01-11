@@ -1,0 +1,29 @@
+<% provide(:title, "Trumpet Scales") %>
+<div class="container-fluid cover" id="cover">
+3>
+
+	<h2 class="text_h2" >Trumpet Scales Fingering </h2>
+
+	<div class="drop-cover">
+		
+
+
+		<%= form_tag(trumpets_path, method: :get) do %>
+			<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+			<%= select_tag :scale_value, options_for_select(@all_scales, params[:scale_value]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
+			<%#= select_tag :scale_value, opions_from_collection_for_select(Scale.all, "id", "name", :scale_value), {:include_blank => "select scale"} %>
+			<%#= text_field_tag :start_note, params[:start_note] %>
+			<%= submit_tag 'View Scale', name: nil, id: "scale_button", class: 'btn btn-primary btn-lg' %>
+			
+		<% end %>
+
+
+
+
+		<h2 class="scale_name" style="font-size: 1.6em"> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %> & Piano: <%= @pianoscale %></h2>
+
+
+</div>
+
+
+

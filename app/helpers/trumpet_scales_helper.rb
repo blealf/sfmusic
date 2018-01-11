@@ -1,0 +1,2 @@
+module TrumpetScalesHelper
+end

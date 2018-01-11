@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @trumpet.number %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @trumpet.note %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @trumpet.value %>
+</p>
+
+<%= link_to 'Edit', edit_trumpet_path(@trumpet) %> |
+<%= link_to 'Back', trumpets_path %>

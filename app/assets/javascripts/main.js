@@ -12,6 +12,16 @@ $(document).ready(function(){
 			$("#navig-element").removeClass(".navig-elements");
 			$("#navig-element").addClass("m-navig-elements").hide();
 		};
+
+		if ($(window).width() >= 501){
+			$(".nav_toggle").show();
+			$(".toggle_btn").hide();
+		};
+
+		if ($(window).width() < 501){
+			$(".nav_toggle").hide();
+			$(".toggle_btn").show();
+		};
 	});
 
 	// $("#menu-btn").click(function(){
@@ -47,5 +57,9 @@ $(document).ready(function(){
 		$('.dropdown-menu').slideToggle();
 	});
 
+
+	$(document).on('click', '.toggle_btn', function(){
+		$('.nav_toggle').slideToggle();
+	});
 
 });
