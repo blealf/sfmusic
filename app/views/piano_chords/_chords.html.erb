@@ -1,5 +1,12 @@
+<button class="btn btn-primary toggle_btn"> Toggle Navigation <span class="glyphicon glyphicon-menu-down"></span> </button>
+<div class="container-fluid cover" id="cover">
 
-<div class="drop-cover">
+
+
+<div class="drop-cover nav_toggle">
+
+	<h2 class="text_h2">Piano Chords</h2>
+	
 	<%= form_tag(piano_chords_path, method: :get) do %>
 		<%= select_tag :start_note, options_for_select(@all_notes, params[:start_note]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
 		<%= select_tag :chord_value, options_for_select(@all_chords, params[:chord_value]), :class => "dropdown-toogle btn btn-lg scale_btn" %>
@@ -21,8 +28,13 @@
 	<hr>
 
 	<!-- Print Out Values-->
-	<h3 class="scale_name"> <%= @main_chord[0].to_s + " " + @get_chord_value.to_s + " chord"  %></h3>
+
 </div>
+
+<div class="drop-cover">
+		<h3 class="scale_name"> <%= @main_chord[0].to_s + " " + @get_chord_value.to_s + " chord"  %></h3>
+</div>
+
 	<hr>
 	<div class="piano-cover" style="overflow-x: scroll(or auto);">
 		<ul class="piano">

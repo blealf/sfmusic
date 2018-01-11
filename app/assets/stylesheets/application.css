@@ -30,9 +30,8 @@ font-family: 'Lato', sans-serif;
 font-family: 'Noto Sans', sans-serif;
 font-family: 'Oleo Script', cursive;
 font-family: 'Rakkas', cursive;
-*/
 
-/*body {
+body {
 	min-width: 550px;
 }
 */
@@ -97,6 +96,18 @@ font-family: 'Rakkas', cursive;
 	font-family: "Lato";
 	font-size: 30px;
 }
+
+
+
+
+
+
+.all_notes_link {
+	border: 1px black dashed; 
+	color: black;
+}
+
+
 
 
 

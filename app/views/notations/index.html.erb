@@ -1,7 +1,19 @@
 <% provide(:title, "Saxophone Scales") %>
+<button class="btn btn-primary toggle_btn"> Toggle Navigation <span class="glyphicon glyphicon-menu-down"></span> </button>
 <div class="container-fluid cover" id="cover">
 
-	<h3 class="text_h2" style="margin-top: -20px"><%= link_to "All Sax Notes", sax_notes_path, class: 'btn btn-lg btn-success', style: "padding: 20px; z-index: -10; border: 1px black dashed; color: black" %></h3>
+	
+
+<!-- 	<h3 class="text_h2" style="margin-top: -20px">
+	<%#= link_to "All Sax Notes", sax_notes_path, class: 'btn btn-lg btn-success', style: "padding: 20px; z-index: -10; border: 1px black dashed; color: black" %></h3> -->
+
+
+
+<div class="nav_toggle">
+
+	<div class="text_h2">
+		<%= link_to "All Sax Notes", sax_notes_path, class: 'btn btn-lg btn-success all_notes_link'%>
+	</div>
 
 	<h2 class="text_h2" >Alto Saxophone Fingering Scales</h2>
 
@@ -21,12 +33,17 @@
 
 
 
-		<h2 class="scale_name" style="font-size: 1.6em"> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %> & Piano: <%= @pianoscale %></h2>
+		
 
 		<%# @main_scale.each do |ms| %>
 			<%#= ms %>
 		<%# end %>
 	</div>
+</div>
+
+<div class="drop-cover">
+	<h2 class="scale_name" style="font-size: 1.6em"> <%= @get_start_note.to_s + " " + @get_scale_value.to_s + " Scale"  %> & Piano: <%= @pianoscale %></h2>
+</div>
 
 
 	<hr>
