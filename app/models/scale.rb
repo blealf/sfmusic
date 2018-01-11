@@ -53,9 +53,68 @@ class Scale < ApplicationRecord
 			y += 1 # increases the y value to pick the next number in the array
 		end
 
-		return scales_worked
+		back = count_back(start_note, scale_value, SaxNote, "sax_notes")
+		return  back + scales_worked
 
 	end
+
+
+	def self.count_back(start_n, scale_n, model, model_small)
+		work_note = start_n + "1"
+		work_scale = Scale.where("name LIKE ? ", "%#{scale_n.to_s}%").take!.value.split(",").map{|v| v.to_i}
+
+
+		work_notes = []
+		
+
+		model.find_by_sql("SELECT note, number FROM #{model_small} ORDER BY number").each do |model_note|
+			work_notes.push(model_note.note)	
+		end
+
+		start_point = model.find_by(note: work_note).number - 1
+		g = 0
+		reverse_scale = work_scale.reverse
+		back_scale = []
+
+
+		while start_point >= 0
+			start_point -= reverse_scale[g].to_i
+			g += 1
+
+			unless start_point <= -1 
+				back_scale.unshift(work_notes[start_point])
+			end
+		end
+
+
+		return back_scale
+	end
+
+
+
+	# def self.count_back(start_n, scale_n, model, model_small)
+	# 	work_note = start_n + "1"
+	# 	work_scale = Scale.where("name LIKE ? ", "%#{scale_n.to_s}%").take!.value.split(",").map{|v| v.to_i}
+	# 	work_scales = work_scale + work_scale
+
+
+	# 	work_notes = []
+	# 	start_point = model.find_by(note: work_note).number
+	# 	g = 0
+
+	# 	model.find_by_sql("SELECT note, number FROM #{model_small} ORDER BY number").each do |model_note|
+
+	# 		if (start_point == model_note.number)
+	# 			work_notes.push(model_note.note)
+	# 			start_point += work_scales[g].to_i
+	# 			g += 1
+	# 		end
+			
+	# 	end
+
+
+	# 	return work_notes
+	# end
 
 end
 

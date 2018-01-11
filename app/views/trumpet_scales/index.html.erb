@@ -46,7 +46,11 @@
 				<div class="col-xs-4 col-sm-2 col-md-1 trump_container">
 					<% if  !(f.note == nil) %>
 						<div class="text_h2 note-cover">
-							<button class="btn btn-inverse note"> <%= label_tag f.note %> </button> 
+							<% if (f.note == (@get_start_note+ "1")) %> 
+								<button class="btn btn-success note"> <%= label_tag f.note %> </button> 
+							<% else %>
+								<button class="btn btn-inverse note"> <%= label_tag f.note %> </button>
+							<% end %>
 						</div>
 				        <div class="trumpet_holes">
 				          <% f.value.split(",").each do |value| %>
@@ -72,4 +76,11 @@
 </div>
 
 
+<div class="container-fluid">
+	<%# Scale.count_back("B", "Major", SaxNote, "sax_notes").each do |g| %>
+	<%# Scale.calculate_scale("A", "Major").each do |g| %>
+		<%#= g %>
+	<%# end %>
 
+	<%#= Scale.count_back("C", "Major", SaxNote, "sax_notes") %>
+</div>

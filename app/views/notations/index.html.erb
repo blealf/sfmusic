@@ -53,7 +53,11 @@
 				<% SaxNote.where("note = ? ", "#{ms}").find_each do |f| %>
 					<% if  !(f.note == nil) %>
 						<div class="text_h2 note-cover">
-							<button class="btn btn-inverse note"> <%= label_tag f.note %> </button> 
+							<% if (f.note == (@get_start_note+ "1")) %> 
+								<button class="btn btn-success note"> <%= label_tag f.note %> </button> 
+							<% else %>
+								<button class="btn btn-inverse note"> <%= label_tag f.note %> </button>
+							<% end %>
 						</div>
 						<%#= image_tag f.note_image.url %>
 						<%= image_tag f.drive_image %>
