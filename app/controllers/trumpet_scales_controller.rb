@@ -38,7 +38,7 @@ class TrumpetScalesController < ApplicationController
 
    all_notes2 = @all_notes + @all_notes
    for_p = @all_notes.index(@get_start_note)
-   @pianoscale = all_notes2[for_p + 3 ]
+   @pianoscale = all_notes2[for_p - 2 ]
 
   end
 end

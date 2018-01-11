@@ -40,7 +40,7 @@
 	<div class="container-fluid">
 
 		<% @main_scale.each do |ms| %>
-				<% Trumpet.where("note = ? ", "#{ms}").find_each do |f| %>
+			<% Trumpet.where("note = ? ", "#{ms}").each do |f| %>
 
 				<div class="col-xs-4 col-sm-2 col-md-1 trump_container">
 					<% if  !(f.note == nil) %>
@@ -60,11 +60,11 @@
 				        </div>
 					<% end %>
 					<%#= label_tag f.note, nil,  class: "scale_name" %>
-					</div>
-				<% end %>
+				</div>
+			<% end %>
 		<% end %>
 			
-		</div>
+	</div>
 
 
 	
