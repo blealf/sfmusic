@@ -104,7 +104,6 @@ Trumpet.create!([
   {number: 17, note: "Bb2", value: "1,0,0"},
   {number: 18, note: "B2", value: "0,1,0"},
   {number: 19, note: "C2", value: "0,0,0"},
-  {number: 20, note: "Db", value: "1,1,0"},
   {number: 21, note: "D2", value: "1,0,0"},
   {number: 22, note: "Eb2", value: "0,1,0"},
   {number: 23, note: "E2", value: "0,0,0"},
@@ -115,7 +114,8 @@ Trumpet.create!([
   {number: 28, note: "A3", value: "1,1,0"},
   {number: 29, note: "Bb3", value: "1,0,0"},
   {number: 30, note: "B3", value: "0,1,0"},
-  {number: 2, note: "G1", value: "1,0,1"}
+  {number: 2, note: "G1", value: "1,0,1"},
+  {number: 20, note: "Db2", value: "1,1,0"}
 ])
 User.create!([
   {email: "blealf@gmail.com", password_digest: "$2a$10$HWbVa8/QPxCTF.CIttZeSOL7saKMIc1Vn/8jflcqnB8W42UZjJtaG", remember_digest: nil, admin: false},
