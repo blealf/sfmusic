@@ -40,6 +40,7 @@
 	<div class="container-fluid">
 
 		<% @main_scale.each do |ms| %>
+			
 			<% Trumpet.where("note = ? ", "#{ms}").each do |f| %>
 
 				<div class="col-xs-4 col-sm-2 col-md-1 trump_container">
